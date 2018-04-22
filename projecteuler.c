@@ -64,17 +64,3 @@ void problem4(void) {
 
 	return;
 }
-
-/*
-int problem5(void) {
-	int i, tmp;
-	int factors[] = {11, 12, 13, 14, 15, 16, 17, 18, 19, 20 }; // lower half is redundant
-	int size = 10;
-
-	tmp = lcm(factors[0], factors[1]);
-	for (i = 2; i < size; i++) // why does size - 1 give the right answer?
-		tmp = lcm(tmp, factors[i]);
-
-	return tmp;
-}
-*/
