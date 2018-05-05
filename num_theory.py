@@ -1,6 +1,5 @@
 from math import gcd
 
-
 def multi_lcm(num_list):
     '''
     num_list: list of integers
