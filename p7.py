@@ -1,6 +1,7 @@
 from math import floor, ceil, log, sqrt
 
 n = 10001
+
 '''Using the prime number theorem'''
 upper_bound = int(ceil(n * (log(n) + log(log(n)))))
 
