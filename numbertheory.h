@@ -1,19 +1,11 @@
-﻿/* Preprocessor directives */
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
 #include <string.h>
 
-/* Symbolic constants */
 #define TRUE 1
 #define FALSE 0
 #define ERROR -1
-
-/* Function prototypes */
-int isPrime(int num);
-int numDigits(int num);
-int Npower(int base, int exp);
-int isPalindrome(int num);
 
 /* Determines whether or not a number is prime
  * PARAM: num is a natural number
