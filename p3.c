@@ -6,7 +6,7 @@ int main(void)
 	unsigned long long int numToCheck = 600851475143;
 
 	for (i = (int) sqrt(numToCheck); i > 0; i--) // begin scanning from the largest possible number down
-		if (numToCheck % i == 0 && isPrime(i)) // if i is a factor and i is prime
+		if (numToCheck % i == 0 && isPrime(i))   // if i is a factor and i is prime
 			break;
 
 	printf("%d\n", i);
