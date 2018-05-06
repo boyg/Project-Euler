@@ -4,7 +4,6 @@ What is the 10001st prime number?
 from num_theory import sieve_of_eratosthenes
 from math import log, ceil
 
-'''nth prime'''
 n = 10001
 
 '''
