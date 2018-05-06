@@ -1,27 +1,23 @@
 '''
 What is the 10001st prime number?
 '''
-from math import floor, ceil, log, sqrt
+from num_theory import sieve_of_eratosthenes
+from math import log, ceil
 
+'''nth prime'''
 n = 10001
 
-'''Using the prime number theorem'''
+'''
+Use the prime number theorem 
+to place an upper bound on the nth prime number
+'''
 upper_bound = int(ceil(n * (log(n) + log(log(n)))))
 
-numbers = [True if i > 1 else False for i in range(upper_bound + 1)]
-sieve = []
-
-'''Sieve of Eratosthenes'''
-for i in range(2, ceil(sqrt(upper_bound)) + 1):
-
-    if numbers[i] == True:
-        j = i**2
-        while j <= upper_bound:
-            numbers[j] = False
-            j += i
+sieve = sieve_of_eratosthenes(upper_bound)
+primes = []
 
 for i in range(2, upper_bound+1):
-    if numbers[i] == True:
-        sieve.append(i)
+    if sieve[i] == True:
+        primes.append(i)
 
-print(sieve[n-1])
+print(primes[n-1])
