@@ -1,3 +1,6 @@
+'''
+What is the 10001st prime number?
+'''
 from math import floor, ceil, log, sqrt
 
 n = 10001
