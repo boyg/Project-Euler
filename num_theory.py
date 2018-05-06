@@ -6,7 +6,12 @@ def multi_lcm(num_list):
     returns: LCM (least common multiple) of the numbers in the list
     '''
     lcm = num_list[0]
-
+    
+    '''
+    Use the following properties:
+    lcm(a, b) = (a*b)/gcd(a, b)
+    lcm(a, b, c) = lcm(a, lcm(b, c))
+    '''
     for i in num_list[1:]:
         lcm = (lcm * i) // gcd(lcm, i)
         
