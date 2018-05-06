@@ -15,7 +15,7 @@ upper_bound = int(ceil(n * (log(n) + log(log(n)))))
 sieve = sieve_of_eratosthenes(upper_bound)
 primes = []
 
-for i in range(2, upper_bound+1):
+for i in range(2, upper_bound + 1):
     if sieve[i] == True:
         primes.append(i)
 
