@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    int i;
+	int i;
 	unsigned long long int numToCheck = 600851475143;
 
 	for (i = (int) sqrt(numToCheck); i > 0; i--) // begin scanning from the largest possible number down
