@@ -5,7 +5,7 @@
 
 int main(void)
 {
-    int sum = 0;
+	int sum = 0;
 	int a = 1;
 	int b = 1;
 
