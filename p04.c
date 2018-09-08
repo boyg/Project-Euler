@@ -4,7 +4,7 @@
 
 int main(void)
 {
-    int i, j, multiplier, multiplicand;
+	int i, j, multiplier, multiplicand;
 	int product = 0;
 
 	for (i = 100; i < 1000; i++)
