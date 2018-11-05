@@ -23,3 +23,23 @@ haystack = (
     '84580156166097919133875499200524063689912560717606'
     '05886116467109405077541002256983155200055935729725'
     '71636269561882670428252483600823257530420752963450')
+
+def calculate_score(section):
+    chars = list(section)
+    nums = [int(char) for char in chars]
+    total = 1
+    for num in nums:
+        total *= num
+    return total
+
+SLIDER_LENGTH = 13
+starting_section = haystack[0:SLIDER_LENGTH]
+needle = calculate_score(starting_section)
+
+'''
+for i in range(0,len(haystack)-SLIDER_LENGTH):
+    slider = haystack[i:i+(SLIDER_LENGTH+1)]
+'''
+'''
+ e.g. len(haystack) = 20
+'''
