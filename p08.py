@@ -24,6 +24,7 @@ haystack = (
     '05886116467109405077541002256983155200055935729725'
     '71636269561882670428252483600823257530420752963450')
 
+'''Finds the product of the digits in a string'''
 def calculate_score(section):
     chars = list(section)
     nums = [int(char) for char in chars]
@@ -32,14 +33,20 @@ def calculate_score(section):
         total *= num
     return total
 
+'''Set the high score to be the starting position'''
 SLIDER_LENGTH = 13
-starting_section = haystack[0:SLIDER_LENGTH]
-needle = calculate_score(starting_section)
+section = haystack[0:SLIDER_LENGTH]
+needle = calculate_score(section)
 
-'''
-for i in range(0,len(haystack)-SLIDER_LENGTH):
-    slider = haystack[i:i+(SLIDER_LENGTH+1)]
-'''
-'''
- e.g. len(haystack) = 20
-'''
+i = 1
+while i < len(haystack) - SLIDER_LENGTH:
+    section = haystack[i:i+SLIDER_LENGTH]
+    if '0' in section: # and 'i' would not go out of bounds:
+        zero_index = i + section.index('0')
+        i += zero_index
+    else: 
+        current_score = calculate_score(section)
+        if current_score > needle:
+            needle = current_score
+
+print(needle)
