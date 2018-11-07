@@ -38,10 +38,11 @@ SLIDER_LENGTH = 13
 section = haystack[0:SLIDER_LENGTH]
 needle = calculate_score(section)
 
+'''Begin moving the slider'''
 i = 1
 while i < len(haystack) - SLIDER_LENGTH:
     section = haystack[i:i+SLIDER_LENGTH]
-    if '0' in section: # and 'i' would not go out of bounds:
+    if '0' in section: # does there need to be an out-of-bounds check here?
         zero_index = i + section.index('0')
         i += zero_index
     else: 
