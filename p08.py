@@ -1,3 +1,5 @@
+from math import log
+
 '''
 Find the thirteen adjacent digits in the 1000-digit number 
 that have the greatest product. What is the value of this product?
@@ -24,8 +26,30 @@ haystack = (
     '05886116467109405077541002256983155200055935729725'
     '71636269561882670428252483600823257530420752963450')
 
+'''
+Determines if the product of digits in first_num 
+is larger than the product of digits in second_num
+'''
+def product_is_larger(first_str, second_str):
+    first_chars = list(first_str)
+    first_nums = [int(char) for char in first_chars]
+    first_sum = 0
+    for num in first_nums:
+        first_sum += log(num)
+
+    second_chars = list(second_str)
+    second_nums = [int(char) for char in second_chars]
+    second_sum = 0
+    for num in second_nums:
+        second_sum += log(num)
+    
+    if first_sum > second_sum:
+        return True
+    else:
+        return False
+
 '''Finds the product of the digits in a string'''
-def calculate_score(section):
+def calculate_product(section):
     chars = list(section)
     nums = [int(char) for char in chars]
     total = 1
@@ -35,8 +59,7 @@ def calculate_score(section):
 
 '''Set the high score to be the starting position'''
 SLIDER_LENGTH = 13
-section = haystack[0:SLIDER_LENGTH]
-needle = calculate_score(section)
+needle = haystack[0:SLIDER_LENGTH]
 
 '''Begin moving the slider'''
 i = 1
@@ -46,8 +69,8 @@ while i < len(haystack) - SLIDER_LENGTH:
         zero_index = i + section.index('0')
         i += zero_index
     else: 
-        current_score = calculate_score(section)
-        if current_score > needle:
-            needle = current_score
+        if product_is_larger(section, needle):
+            needle = section
+        i += 1
 
-print(needle)
+print(calculate_product(needle))
